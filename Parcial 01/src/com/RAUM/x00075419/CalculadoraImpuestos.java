@@ -1,12 +1,12 @@
 package com.RAUM.x00075419;
 
 public final class CalculadoraImpuestos {
-    private double totalRenta, totalISSS, totalAFP;
+    private static double totalRenta, totalISSS, totalAFP;
 
     private CalculadoraImpuestos() {
     }
 
-    public double calcularPago(Empleado p){
+    public static double calcularPago(Empleado p){
         double Renta = 0, ISSS = 0, AFP = 0, restante = 0;
         if(p instanceof ServicioProfesional){
             Renta = 0.1*p.salario;
@@ -32,10 +32,10 @@ public final class CalculadoraImpuestos {
         }
     }
 
-    public String mostrarTotales() {
-        return "Total Renta: " + totalRenta +
-                ", Total SSS: " + totalISSS +
-                ", Total AFP: " + totalAFP +
+    public static String mostrarTotales() {
+        return "Total de impuestos de Renta: " + totalRenta +
+                ", Total de ISSS: " + totalISSS +
+                ", Total de AFP: " + totalAFP +
                 '}';
     }
 }
